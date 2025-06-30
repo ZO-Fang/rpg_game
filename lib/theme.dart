@@ -44,8 +44,8 @@ ThemeData primaryTheme = ThemeData(
       letterSpacing: 1
     ),
     titleMedium: TextStyle(
-      color: AppColors.paleBlue,
-      fontSize: 18,
+      color: AppColors.riceWhite,
+      fontSize: 30,
       fontWeight: FontWeight.bold,
       letterSpacing: 2
     )
@@ -59,8 +59,31 @@ ThemeData primaryTheme = ThemeData(
     ),
     shadowColor: Colors.transparent,
     margin: const EdgeInsets.only(bottom: 16)
+  ),
+
+  //input theme
+  inputDecorationTheme: InputDecorationTheme(
+    filled: false,
+    enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.navy, width: 2.0),
+      ),
+    focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.orange, width: 2.0),
+      ),
+    labelStyle: TextStyle(color: AppColors.orange),
+    prefixIconColor: AppColors.orange
+  ),
+
+  dialogTheme: DialogThemeData(
+    backgroundColor: AppColors.riceWhite,
+    surfaceTintColor: Colors.transparent,
+    shape: Border(  //给弹出框的顶部增加一条橙色线，强调app的主体色
+      top: BorderSide(
+        color: AppColors.orange,
+        width: 4,
+      ),
+  ),
+
   )
-
-
 );
 

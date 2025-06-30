@@ -1,7 +1,7 @@
 enum Vocation {
   witch(
       title: "Valley Witch",
-      description: "live in valley",
+      description: "guardian of forgotten forest secrets",
       weapon: "magic wand",
       ability: "magic",
       image: "witch.jpg"

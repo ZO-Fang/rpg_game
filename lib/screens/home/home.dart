@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rpg_game/model/character.dart';
+import 'package:rpg_game/screens/create/create.dart';
 import 'package:rpg_game/shared/styled_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rpg_game/shared/styled_button.dart';
@@ -20,12 +21,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Characters',
-            style: GoogleFonts.almendra(
-              fontWeight: FontWeight.bold,
-              fontSize: 30
-            ),
-        ),
+        title: StyledTitle('Your Characters'),
         centerTitle: true
       ),
       body: Container(
@@ -43,7 +39,11 @@ class _HomeState extends State<Home> {
               ),
 
               StyledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (ctx) => Create()
+                    ));
+                  },
                   label: 'create new'
                 )
               ],
