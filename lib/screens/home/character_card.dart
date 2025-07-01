@@ -6,6 +6,7 @@ import 'package:rpg_game/theme.dart';
 
 class CharacterCard extends StatelessWidget {
   const CharacterCard(this.character, {super.key});
+  //这个this.character是关心顺序的，在花括号外面
 
   final Character character;
 
@@ -39,7 +40,7 @@ class CharacterCard extends StatelessWidget {
             IconButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (ctx) => const Profile(),
+                    builder: (ctx) => Profile(character: character),
                 ));
               },
               icon: Icon(Icons.account_box_outlined, color: AppColors.orange)

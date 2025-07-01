@@ -40,25 +40,27 @@ mixin Stats {
       if (stat == 'skill'){
         _skill++;
       }
+
+      //当有某个数字增加了，那么point就会相应减少
+      _points--;
     }
   }
 
   void decreaseStat(String stat){
     if(stat == 'health' && _health > 5) {
       _health--;
-      _points++;
     }
     if(stat == 'attack' && _attack > 5) {
       _attack--;
-      _points++;
     }
     if(stat == 'defense' && _defense > 5) {
       _defense--;
-      _points++;
     }
     if(stat == 'skill' && _skill > 5) {
       _skill--;
-      _points++;
     }
+
+    //如果某个数字减少了，那么能用的points会相应增加
+    _points++;
   }
 }
