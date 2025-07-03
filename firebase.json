@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"rgp-card-game","appId":"1:1084432287996:android:b47c4d11b4fa7a2dff2f79","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"rgp-card-game","configurations":{"android":"1:1084432287996:android:b47c4d11b4fa7a2dff2f79","ios":"1:1084432287996:ios:3f9304c5758a9438ff2f79"}}}}}}

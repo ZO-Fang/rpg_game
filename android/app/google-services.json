@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1084432287996",
+    "project_id": "rgp-card-game",
+    "storage_bucket": "rgp-card-game.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084432287996:android:b47c4d11b4fa7a2dff2f79",
+        "android_client_info": {
+          "package_name": "com.example.rpg_game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUt0OIHX9AwJX1fkUbn72JvlLz5LyM30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

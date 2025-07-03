@@ -11,7 +11,7 @@ import 'package:rpg_game/theme.dart';
 class Profile extends StatelessWidget {
   const Profile({
     super.key,
-    required this.character   //这个是不关心顺序的命名参数，在花括号里面
+    required this.character
   });
 
   final Character character;
