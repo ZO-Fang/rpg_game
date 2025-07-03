@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rpg_game/model/skill.dart';
 import 'package:rpg_game/model/stats.dart';
 import 'package:rpg_game/model/vocation.dart';
@@ -35,11 +36,62 @@ class Character with Stats {
     _isFav = !_isFav;
   }
 
-  void updatedSkill(Skill skill) {
+  void updateSkill(Skill skill) {
     skills.clear();
     skills.add(skill);
   }
 
+  //character to firestore
+Map<String, dynamic> toFirestore() {
+    return {
+      'name': name,
+      'slogan': slogan,
+      'isFav': _isFav,
+      'vocation': vocation.toString(),
+      'skills': skills.map((s) => s.id).toList(),
+      'stats': statsAsMap,
+      'points': points
+    };
+}
+
+//这个 toFirestore() 方法的作用就是把一个 Character 对象转换成一个 Map，
+// 这个 Map 的 key 是 String 类型（字段名），value 是 dynamic 类型
+// （值可以是任何类型，如 String、bool、List、Map 等），从而便于上传到
+// Firebase Firestore 数据库。
+
+
+//character from firestore
+factory Character.fromFirestore(
+    DocumentSnapshot<Map<String, dynamic>> snapshot,
+    SnapshotOptions? options
+    ) {
+    //get data from snapshot
+  final data = snapshot.data()!;
+
+  //make character instance
+  Character character = Character(
+    name: data['name'],
+    slogan: data['slogan'],
+    id: snapshot.id,
+    vocation: Vocation.values.firstWhere((element) => element.toString() == data['vocation'])
+  );
+
+  //update skills
+  for(String id in data['skills']) {
+    Skill skill = allSkills.firstWhere((element) => element.id == id);
+    character.updateSkill(skill);
+  }
+
+  //set isFav
+  if (data['isFav'] == true){
+    character.toggleIsFav();
+  }
+
+  //assign stats and points
+  character.setStats(point: data['points'], stats: data['stats']);
+
+  return character;
+}
 }
 
 

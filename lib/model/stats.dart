@@ -63,4 +63,13 @@ mixin Stats {
     //如果某个数字减少了，那么能用的points会相应增加
     _points++;
   }
+
+
+  void setStats({required int point, required Map<String, dynamic> stats}) {
+    _points = points;
+    _health = stats['health'];
+    _attack = stats['defense'];
+    _defense = stats['defense'];
+    _skill = stats['skill'];
+  }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:rpg_game/model/character.dart';
 import 'package:rpg_game/model/vocation.dart';
 import 'package:rpg_game/screens/create/vocation_card.dart';
 import 'package:rpg_game/screens/home/home.dart';
+import 'package:rpg_game/services/character_store.dart';
 import 'package:rpg_game/shared/styled_button.dart';
 import 'package:rpg_game/shared/styled_text.dart';
 import 'package:rpg_game/theme.dart';
@@ -108,11 +110,19 @@ class _CreateState extends State<Create> {
     print(_nameController.text);
     print(_sloganController.text);
 
-    characters.add(Character(
-      name: _nameController.text.trim(),
-      slogan: _sloganController.text.trim(),
-      vocation: selectedVocation,
-      id: uid.v4()
+    // characters.add(Character(
+    //   name: _nameController.text.trim(),
+    //   slogan: _sloganController.text.trim(),
+    //   vocation: selectedVocation,
+    //   id: uid.v4()
+    // ));
+
+    Provider.of<CharacterStore>(context, listen: false)
+    .addCharacter(Character(
+        name: _nameController.text.trim(),
+        slogan: _sloganController.text.trim(),
+        vocation: selectedVocation,
+        id: uid.v4()
     ));
 
     characters.forEach((character) {

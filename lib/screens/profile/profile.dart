@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:rpg_game/model/character.dart';
 import 'package:rpg_game/screens/profile/skill_list.dart';
 import 'package:rpg_game/screens/profile/stats_table.dart';
+import 'package:rpg_game/services/character_store.dart';
+import 'package:rpg_game/shared/styled_button.dart';
 import 'package:rpg_game/shared/styled_text.dart';
 import 'package:rpg_game/theme.dart';
 
@@ -86,7 +89,38 @@ class Profile extends StatelessWidget {
                   SkillList(hero: character)
                 ]
               )
-            )
+            ),
+
+            StyledButton(
+              onPressed: () {
+                Provider.of<CharacterStore>(context, listen: false).saveCharacter(character);
+
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: const StyledHeading('Character saved!'),
+                  showCloseIcon: true,
+                  duration: const Duration(seconds: 2),
+                  backgroundColor: AppColors.orange,
+                ));
+              },
+              label : 'Save Character',
+            ),
+            const SizedBox(height: 15),
+
+            StyledButton(
+              onPressed: () {
+                Provider.of<CharacterStore>(context, listen: false).removeCharacter(character);
+
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: const StyledHeading('Character deleted!'),
+                  showCloseIcon: true,
+                  duration: const Duration(seconds: 2),
+                  backgroundColor: AppColors.orange,
+                ));
+              },
+              label : 'Delete Character',
+            ),
+
+            const SizedBox(height: 20)
 
           ]
         )
