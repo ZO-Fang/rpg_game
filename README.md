@@ -1,16 +1,24 @@
-# rpg_game
+# RPG Character Creator App
 
-A new Flutter project.
+A simple Flutter app that allows users to create, update, and delete custom RPG characters. Built with Firebase Firestore as the backend database.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+1, Create a custom RPG character with: Name, slogan, Stats (health, attack, defense, etc.), Skills, weapons.
 
-A few resources to get you started if this is your first Flutter project:
+2, View a list of all characters
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3, Update character stats and skills in character profile.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4, Delete characters
+
+5, Data is stored in Firebase Cloud Firestore
+
+## Screenshots
+
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-1.jpg" width="400"/>
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-2.jpg" width="400"/>
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-3.jpg" width="400"/>
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-4.jpg" width="400"/>
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-6.jpg" width="400"/>
+<img src="https://github.com/ZO-Fang/rpg_game/blob/master/assets/screenshots/rpg-7.jpg" width="400"/>
